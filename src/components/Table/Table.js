@@ -59,12 +59,11 @@ const getSelection = (from, to, grid) => {
 
 const Table = ({ width, height }) => {
   const isSelecting = useRef(false);
+
   const [grid, setGrid] = useState(getGrid(width, height));
   const [from, setFrom] = useState(null);
   const [to, setTo] = useState(null);
   const [selection, setSelection] = useState(null);
-
-
 
   const handleMouseDown = (e) => {
     if ("TD" === e.target.tagName) {
@@ -147,11 +146,7 @@ const Table = ({ width, height }) => {
         <button disabled={!selection} data-merge-button onClick={mergeCells}>
           Merge
         </button>
-        <button
-          disabled={!selection}
-          data-separate-button
-          onClick={separateCells}
-        >
+        <button disabled={!selection} data-separate-button onClick={separateCells} >
           Separate
         </button>
       </div>
